@@ -8,13 +8,18 @@ import {
     
 } from "@material-tailwind/react";
 import { FaRegStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
 
 const Book = ({ book }) => {
-    const { bookName, author, image, rating, category, tags ,}= book
+    const { bookName, author, image, rating, category, tags, bookId, }= book
     return (
         <div >
+           
+            <Link to={`/book/${bookId}`}>
             
-            <Card className="mt-6 w-96">
+            
+            <Card className="mt-6 w-96 p-4">
                 <CardHeader color="blue-gray" className="relative h-[380px] object-center object-cover">
                     <img
                         src={image}
@@ -31,7 +36,7 @@ const Book = ({ book }) => {
                         {bookName}
                     </Typography>
                     <Typography>
-                       By:{author}
+                       By: {author}
                     </Typography>
                 </CardBody>
                 <hr className="border border-dashed" />
@@ -41,7 +46,8 @@ const Book = ({ book }) => {
                         <h1 className=" flex gap-2">{rating} <FaRegStar className="mt-[3px]"/> </h1>
                     </div>
                 </CardFooter>
-            </Card>
+                </Card>
+            </Link>
         </div>
     );
 };

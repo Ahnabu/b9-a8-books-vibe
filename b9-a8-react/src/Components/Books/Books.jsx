@@ -5,11 +5,11 @@ import Book from "../Book/Book";
 const Books = () => {
     const [books, setBooks] = useState([])
     useEffect(() => {
-             fetch('/books.json')
+        fetch('/books.json')
             .then(response => response.json())
             .then(data => setBooks(data))
-    },[])
-    console.log(books);
+    }, []);
+   
     
     return (
         

@@ -12,7 +12,8 @@ import { Link } from "react-router-dom";
 
 
 const Book = ({ book }) => {
-    const { bookName, author, image, rating, category, tags, bookId, }= book
+    const { bookName, author, image, rating, category, tags, bookId, } = book
+  
     return (
         <div >
            

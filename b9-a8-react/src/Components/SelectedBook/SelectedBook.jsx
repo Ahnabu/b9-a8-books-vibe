@@ -7,13 +7,26 @@ import {
     Typography,
     Button,
 } from "@material-tailwind/react";
+import toast, { Toaster } from 'react-hot-toast';
+import { useState } from "react";
 const SelectedBook = () => {
     const books = useLoaderData();
     const {id} = useParams()
-    console.log(id);
+    const [read, setRead] = useState([]);
+   
     const book = books.find(item => item.bookId == id);
-    console.log(book);
-    const { bookName, author, image, rating, review, tags, totalPages, yearOfPublishing, publisher, category } = book
+    
+    const { bookName, author, image, rating, review, tags, totalPages, yearOfPublishing, publisher, category,bookId } = book
+    const ReadHandler = (id) => {
+
+        toast('successfully added to read section')
+        if (read.map(item => item.bookId != id)) {
+            setRead([...read, book])
+
+            
+        }
+        console.log(read);
+    }
 
     {
         
@@ -36,11 +49,11 @@ const SelectedBook = () => {
                         <Typography variant="h6" color="gray" className="mb-4 uppercase text-4xl">
                             {bookName}
                         </Typography>
-                        <Typography variant="h4" color="blue-gray" className="mb-2">
+                        <Typography variant="h6" color="blue-gray" className="mb-2">
                             By:{author}
                         </Typography>
                         <hr />
-                        <Typography variant="h4" color="blue-gray" className="mb-2">
+                        <Typography variant="h6" color="blue-gray" className="mb-2">
                             {category}
                         </Typography>
                         <hr />
@@ -74,25 +87,15 @@ const SelectedBook = () => {
                             
                             
                         
-                        <a href="#" className="inline-block">
-                            <Button variant="text" className="flex items-center gap-2">
-                                Learn More
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                    strokeWidth={2}
-                                    className="h-4 w-4"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                                    />
-                                </svg>
+                        <div className="flex gap-5">
+                            <Button variant="outlined" className="flex items-center gap-2" onClick={()=>ReadHandler(bookId)}>
+                                Read
                             </Button>
-                        </a>
+                            <Toaster />
+                            <Button className="bg-[#50B1C9] ">Wishlist</Button>
+                        </div>
+                        
+                       
                     </CardBody>
                 </Card>
             </div>

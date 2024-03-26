@@ -1,0 +1,98 @@
+[
+    {
+        "bookId": 1,
+        "bookName": "The Silent Patient",
+        "author": "Alex Michaelides",
+        "image": "https://i.ibb.co/pPCsgZt/421664636-264013720011516-3331972307861666150-n.png",
+        "review": "A gripping psychological thriller that keeps you guessing until the very end.",
+        "totalPages": 336,
+        "rating": 4.5,
+        "category": "Mystery",
+        "tags": [
+            "Suspense",
+            "Psychological"
+        ],
+        "publisher": "Celadon Books",
+        "yearOfPublishing": 2019
+    },
+    {
+        "bookId": 2,
+        "bookName": "1984",
+        "author": "George Orwell",
+        "image": "https://i.ibb.co/Qr15Dc4/433584364-1073590570367971-6263358621372136265-n.png",
+        "review": "A haunting portrayal of a dystopian society that feels eerily relevant today.",
+        "totalPages": 328,
+        "rating": 4.8,
+        "category": "Classic",
+        "tags": [
+            "Dystopian",
+            "Political"
+        ],
+        "publisher": "Secker & Warburg",
+        "yearOfPublishing": 1949
+    },
+    {
+        "bookId": 3,
+        "bookName": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "image": "https://i.ibb.co/HG6JL4P/433894110-1132629321111496-5553776909819879441-n.png",
+        "review": "An American classic that captures the essence of the Jazz Age.",
+        "totalPages": 180,
+        "rating": 4.3,
+        "category": "Classic",
+        "tags": [
+            "Romance",
+            "Drama"
+        ],
+        "publisher": "Charles Scribner's Sons",
+        "yearOfPublishing": 1925
+    },
+    {
+        "bookId": 4,
+        "bookName": "The Catcher in the Rye",
+        "author": "J.D. Salinger",
+        "image": "https://i.ibb.co/PFYtgFN/433665342-388249364065961-2859243853599585472-n.png",
+        "review": "A poignant coming-of-age story that resonates with readers of all ages.",
+        "totalPages": 224,
+        "rating": 4.6,
+        "category": "Classic",
+        "tags": [
+            "Coming-of-Age",
+            "Literary"
+        ],
+        "publisher": "Little, Brown and Company",
+        "yearOfPublishing": 1951
+    },
+    {
+        "bookId": 5,
+        "bookName": "The Girl on the Train",
+        "author": "Paula Hawkins",
+        "image": "https://i.ibb.co/KxGtfPS/433684717-414087361231008-3112897914203233491-n.png",
+        "review": "A thrilling ride through the tangled lives of flawed characters, full of twists and turns.",
+        "totalPages": 336,
+        "rating": 4.2,
+        "category": "Mystery",
+        "tags": [
+            "Suspense",
+            "Psychological"
+        ],
+        "publisher": "Riverhead Books",
+        "yearOfPublishing": 2015
+    },
+    {
+        "bookId": 6,
+        "bookName": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "image": "w-[320px] h-[400px]https://i.ibb.co/cyJ9kLH/431451026-1415861735984364-531185032160950367-n.png",
+        "review": "A powerful narrative that confronts the injustices of racial discrimination with empathy and grace.",
+        "totalPages": 281,
+        "rating": 4.7,
+        "category": "Classic",
+        "tags": [
+            "Social Justice",
+            "Southern Gothic"
+        ],
+        "publisher": "J. B. Lippincott & Co.",
+        "yearOfPublishing": 1960
+    }
+]

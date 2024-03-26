@@ -3,10 +3,12 @@ import { StickyNavbar } from '../Components/Navbar/Navbar';
 
 
 
+
 const Router = () => {
     return (
         <>
             <StickyNavbar></StickyNavbar>
+           
             <Outlet></Outlet>
         
         </>

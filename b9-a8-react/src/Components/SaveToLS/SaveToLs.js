@@ -29,4 +29,4 @@ const wishBook = id => {
         localStorage.removeItem('wish-books', JSON.stringify(readBooks))
     }
 }
-export {getBook, setBook,wishBook}
+export { getBook, setBook, wishBook, getWishBook }

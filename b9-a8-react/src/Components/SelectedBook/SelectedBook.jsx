@@ -8,24 +8,38 @@ import {
     Button,
 } from "@material-tailwind/react";
 import toast, { Toaster } from 'react-hot-toast';
-import { useState } from "react";
+import {  getBook, setBook, wishBook } from "../SaveToLS/SaveToLs";
+
 const SelectedBook = () => {
     const books = useLoaderData();
     const {id} = useParams()
-    const [read, setRead] = useState([]);
+    
    
     const book = books.find(item => item.bookId == id);
     
     const { bookName, author, image, rating, review, tags, totalPages, yearOfPublishing, publisher, category,bookId } = book
     const ReadHandler = (id) => {
-
-        toast('successfully added to read section')
-        if (read.map(item => item.bookId != id)) {
-            setRead([...read, book])
-
-            
+        const readBooks = getBook()
+        const exist = readBooks.find(bookId => bookId == id);
+        if (!exist) {
+            setBook(id);
+            toast.success('successfully added to read section')
         }
-        console.log(read);
+        else {
+            toast.error("already read this book")
+        }
+        
+    }
+    const WishHandler = id => {
+        const readBooks = getBook()
+        const exist = readBooks.find(bookId => bookId == id);
+        if (!exist) {
+            toast.success('successfully added to the wishlist')
+            wishBook(id)
+        }
+        else {
+            toast.error("already read this book")
+        }
     }
 
     {
@@ -60,7 +74,7 @@ const SelectedBook = () => {
                         <Typography color="gray" className="mb-8 font-normal">
                            <span className="font-bold text-black">Review:</span> {review}
                         </Typography>
-                        <div className="flex justify-between">
+                        <div className="flex gap-5">
                             <h1 className="font-semibold">Tags:</h1>
                             <h1 className="text-[#23BE0A] border border-[#23BE0A] bg-[#23BE0A] bg-opacity-5 rounded-xl p-1 ml-3 text-center ">#{tags[0]}</h1>
                             <h1 className="text-[#23BE0A] border bg-[#23BE0A] bg-opacity-5 border-[#23BE0A] rounded-xl p-1 ml-3 text-center">#{tags[1]}</h1>
@@ -91,8 +105,33 @@ const SelectedBook = () => {
                             <Button variant="outlined" className="flex items-center gap-2" onClick={()=>ReadHandler(bookId)}>
                                 Read
                             </Button>
-                            <Toaster />
-                            <Button className="bg-[#50B1C9] ">Wishlist</Button>
+                            
+                            <Button className="bg-[#50B1C9] " onClick={() => WishHandler(bookId)} >Wishlist</Button>
+                            <Toaster
+                                position="top-right"
+                                reverseOrder={false}
+                                gutter={8}
+                                containerClassName=""
+                                containerStyle={{}}
+                                toastOptions={{
+                                    // Define default options
+                                    className: '',
+                                    duration: 5000,
+                                    style: {
+                                        background: '#363636',
+                                        color: '#fff',
+                                    },
+
+                                    // Default options for specific types
+                                    success: {
+                                        duration: 3000,
+                                        theme: {
+                                            primary: 'green',
+                                            secondary: 'black',
+                                        },
+                                    },
+                                }}
+                            />
                         </div>
                         
                        

@@ -13,6 +13,8 @@ import PageToRead from './Components/Page/PageToRead';
 import SelectedBook from './Components/SelectedBook/SelectedBook';
 import Read from './Components/Read/Read';
 import Wishlist from './Components/Wishlist/Wishlist';
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,7 +32,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/listed-books",
-        element: <Listed></Listed>,
+        element: <Listed ></Listed>,
+        
         children: [
           {
           path: "/listed-books",
@@ -40,7 +43,7 @@ const router = createBrowserRouter([
           {
           path: "/listed-books/wishlist",
             element: <Wishlist></Wishlist>,
-            loader: () => fetch('/books.json')
+            loader: () => fetch('/books.json'),
           },
         ],
         
@@ -48,6 +51,7 @@ const router = createBrowserRouter([
       {
         path: "/pages-to-read",
         element: <PageToRead></PageToRead>,
+        loader: () => fetch('/books.json')
       },
       
     ]

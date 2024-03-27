@@ -1,5 +1,6 @@
-import { useState } from "react";
+
 import { Link, Outlet } from "react-router-dom";
+
 import {
     Menu,
     MenuHandler,
@@ -7,21 +8,31 @@ import {
     MenuItem,
     Button,
 } from "@material-tailwind/react";
+
+
+import {  useState } from "react";
 const Listed = () => {
-  const [tab, setTab]=useState(0)
-    
+   
+    const [tab, setTab] = useState(0);
+    const [sort, setSort] = useState([])
+    const handleMenu = () => {
+        
+    }
+
+
     return (
         <div>
             <h1 className="text-5xl text-center mt-12 mb-4 py-3 bg-[#1313130D] text-black rounded-xl">Books</h1>
-            <div>
+            <div className="text-center">
                 <Menu
                     animate={{
                         mount: { y: 0 },
                         unmount: { y: 25 },
                     }}
+                    
                 >
                     <MenuHandler>
-                        <Button> Sort by</Button>
+                        <Button className="bg-[#23BE0A] "> Sort by</Button>
                     </MenuHandler>
                     <MenuList>
                         <MenuItem>Rating</MenuItem>
@@ -39,18 +50,18 @@ const Listed = () => {
                     <Link to={'/listed-books'} onClick={() => setTab(0)} 
                         className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tab === 0 ? 'border border-b-0 ' :'border-b '} dark:border-gray-900 dark:text-gray-600 top-rounded-xl `}>
                         
-                        <span className="font-semibold">Read</span>
+                        <span className="font-semibold" >Read</span>
                     </Link>
                     <Link to={'/listed-books/wishlist'} onClick={() => setTab(1)} 
                         className={`flex items-center flex-shrink-0 px-5 py-3 space-x-2 ${tab === 1 ? 'border border-b-0' : 'border-b '} dark:border-gray-900 dark:text-gray-600 `}>
                         
-                        <span className="font-semibold">WishList</span>
+                        <span className="font-semibold ">WishList</span>
                     </Link>
                    
                    
                 </div>
             </div>
-                <Outlet></Outlet>
+            <Outlet  ></Outlet>
         </div>
     );
 };

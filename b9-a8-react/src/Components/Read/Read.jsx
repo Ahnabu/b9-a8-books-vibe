@@ -1,32 +1,12 @@
 
-
-import { useLoaderData } from "react-router-dom";
-import { getBook } from "../SaveToLS/SaveToLs";
-
-import { useEffect, useState } from "react";
 import ReadBook from "./ReadBook/ReadBook";
+import { useReadListBooks } from "../ListHooks/ListHooks";
 const Read = () => {
-    const books = useLoaderData();
+    const itemBook = useReadListBooks();
     
-    const [itemBook, setItemBook] = useState([]);
-    
-    useEffect(() => {
-        const ReadBooks = getBook();
-        if (books.length > 0) {
-            // const ReadingBook = books.filter(item => ReadBooks.includes(item.bookId ));
-            const ReadingBook = [];
-            for (const id of ReadBooks) {
-                const book = books.find(item => item.bookId == id);
-                if (book) {
-                    ReadingBook.push(book)
-                }
 
-            }
-            setItemBook(ReadingBook)
-            console.log(ReadingBook,itemBook)
-        }
-       
-   },[books])
+    console.log(itemBook);
+   
     
  
     return (
@@ -38,7 +18,7 @@ const Read = () => {
                 
             }
 
-            <h1>{itemBook.length}</h1>
+          
         </div>
     );
 };

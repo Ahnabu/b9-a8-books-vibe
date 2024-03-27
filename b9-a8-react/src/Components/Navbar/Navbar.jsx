@@ -130,10 +130,10 @@ export function StickyNavbar() {
                     {navList}
                     <div className="flex items-center gap-x-1">
                         <Button fullWidth variant="text" size="sm" className="bg-[#23BE0A]">
-                            <span>Log In</span>
+                            <span>Sing In</span>
                         </Button>
                         <Button fullWidth variant="gradient" size="sm" className="bg-[#59C6D2]">
-                            <span>Sign in</span>
+                            <span>Sign Up</span>
                         </Button>
                     </div>
                 </MobileNav>

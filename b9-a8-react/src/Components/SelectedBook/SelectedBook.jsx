@@ -13,16 +13,17 @@ import {  getBook, setBook, wishBook } from "../SaveToLS/SaveToLs";
 const SelectedBook = () => {
     const books = useLoaderData();
     const {id} = useParams()
-    
+    const idInt = id;
    
-    const book = books.find(item => item.bookId == id);
+    const book = books.find(item => item.bookId == idInt);
     
     const { bookName, author, image, rating, review, tags, totalPages, yearOfPublishing, publisher, category,bookId } = book
-    const ReadHandler = (id) => {
+    const ReadHandler = (idInt) => {
         const readBooks = getBook()
-        const exist = readBooks.find(bookId => bookId == id);
+       
+        const exist = readBooks.find(bookId => bookId == idInt);
         if (!exist) {
-            setBook(id);
+            setBook(idInt);
             toast.success('successfully added to read section')
         }
         else {
@@ -30,12 +31,12 @@ const SelectedBook = () => {
         }
         
     }
-    const WishHandler = id => {
+    const WishHandler = idInt => {
         const readBooks = getBook()
-        const exist = readBooks.find(bookId => bookId == id);
+        const exist = readBooks.find(bookId => bookId == idInt);
         if (!exist) {
             toast.success('successfully added to the wishlist')
-            wishBook(id)
+            wishBook(idInt)
         }
         else {
             toast.error("already read this book")

@@ -53,16 +53,7 @@ export function StickyNavbar() {
                     return isActive ? { color: '#23BE0A', borderRadius: "15px", border:"1px solid #23BE0A", padding:'10px 15px'} : {};
                 }}> Pages to Read</NavLink>
             </Typography>
-            {/* <Typography
-                as="li"
-                variant="small"
-                color="blue-gray"
-                className="p-1 font-normal"
-            >
-                <a href="#" className="flex items-center">
-                    Docs
-                </a>
-            </Typography> */}
+            
         </ul>
     );
 

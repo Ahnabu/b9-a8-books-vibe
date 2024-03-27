@@ -31,7 +31,8 @@ const Read = () => {
  
     return (
        
-        <div>
+        <div className="flex
+         flex-col gap-8 mt-8">
             {
                itemBook.map(book => <ReadBook key={book.bookId} book={book} ></ReadBook>)
                 

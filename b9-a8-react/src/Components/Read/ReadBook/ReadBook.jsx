@@ -14,11 +14,11 @@ import { IoPeopleSharp } from "react-icons/io5";
 import { IoBookOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 const ReadBook = ({book}) => {
-    console.log(book)
+    
     const { bookName, author, image, rating, tags, totalPages, yearOfPublishing, publisher, category,bookId } = book
     return (
-        <div >
-            <Card className="w-[80vw]  mx-auto h-[420px] flex-row ">
+        <div className="" >
+            <Card className=" w-380px lg:w-[80vw]  mx-auto h-full flex-col lg:flex-row ">
                 <CardHeader
                     shadow={false}
                     floated={false}
@@ -37,7 +37,7 @@ const ReadBook = ({book}) => {
                     <Typography variant="h6" color="gray" className="mb-4 ">
                         By:{author}
                     </Typography>
-                    <div className="flex gap-5 mt-4">
+                    <div className="flex gap-2 lg:gap-5 mt-4">
                         <h1 className="font-semibold">Tags:</h1>
                         <h1 className="text-[#23BE0A] border border-[#23BE0A] bg-[#23BE0A] bg-opacity-5 rounded-xl p-1 ml-3 text-center ">#{tags[0]}</h1>
                         <h1 className="text-[#23BE0A] border bg-[#23BE0A] bg-opacity-5 border-[#23BE0A] rounded-xl p-1 ml-3 text-center">#{tags[1]}</h1>

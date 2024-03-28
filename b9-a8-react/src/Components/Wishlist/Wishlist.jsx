@@ -14,10 +14,10 @@ const Wishlist = ( ) => {
     
     const wishBook = useWishListBooks()
    
-    console.log(wishBook);
+
         return (
 
-            <div className="flex
+            <div className="flex 
          flex-col gap-8 mt-8">
                 {
                     wishBook.map(book => <WishlistBook key={book.bookId} book={book} ></WishlistBook>)

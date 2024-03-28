@@ -1,8 +1,9 @@
 import { useEffect,  useState } from "react";
 import { getWishBook } from "../SaveToLS/SaveToLs";
 import { getBook } from "../SaveToLS/SaveToLs";
+// const sort = []
 const useWishListBooks = () => {
-   
+    
     const [wishBook, getBook] = useState([]);
     const [books, setBooks] = useState([])
     useEffect(() => { 
@@ -28,10 +29,13 @@ const useWishListBooks = () => {
             }
             getBook(ReadingBook)
            
+
         }
         
 
     }, [books])
+    // sort.push(wishBook)
+
     return wishBook
 }
 const useReadListBooks = () => {
@@ -64,4 +68,5 @@ const useReadListBooks = () => {
     }, [books])
     return itemBook
 }
+
 export {useWishListBooks,useReadListBooks}

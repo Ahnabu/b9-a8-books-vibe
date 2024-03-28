@@ -3,7 +3,8 @@
 
 
 
-import { useWishListBooks } from "../ListHooks/ListHooks";
+// import { useWishListBooks } from "../ListHooks/ListHooks";
+import { useWishSort } from "../SortedData/SortedData";
 import WishlistBook from "../WishlistBook/WishlistBook";
 
 const Wishlist = ( ) => {
@@ -12,7 +13,7 @@ const Wishlist = ( ) => {
     
 
     
-    const wishBook = useWishListBooks()
+    const wishBook = useWishSort()
    
 
         return (

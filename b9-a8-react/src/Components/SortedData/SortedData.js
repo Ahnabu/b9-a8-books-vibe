@@ -4,6 +4,7 @@ import { useWishListBooks } from '../ListHooks/ListHooks';
 function useWishSort(sortBy) {
     
     const [sortedData, setSortedData] = useState([]);
+    
     const data =useWishListBooks()
     useEffect(() => {
         const sortData = [...data]; // Avoid mutating the original data
@@ -24,8 +25,8 @@ function useWishSort(sortBy) {
         });
         setSortedData(sortData);
     }, [data, sortBy]); // Re-run useEffect when data or sortBy changes
-
     return sortedData;
 }
+
 
 export { useWishSort } 

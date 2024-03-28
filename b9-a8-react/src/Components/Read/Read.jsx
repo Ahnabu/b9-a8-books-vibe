@@ -1,12 +1,13 @@
 
 import ReadBook from "./ReadBook/ReadBook";
-import { useReadListBooks } from "../ListHooks/ListHooks";
-const Read = () => {
-    const itemBook = useReadListBooks();
+// import { useReadListBooks } from "../ListHooks/ListHooks";
+// eslint-disable-next-line react/prop-types
+const Read = ({sortedBooks}) => {
+    // const itemBook = useReadListBooks();
     
 
+    const readBooks = sortedBooks;
   
-   
     
  
     return (
@@ -14,7 +15,7 @@ const Read = () => {
         <div className="flex 
          flex-col gap-8 mt-8">
             {
-               itemBook.map(book => <ReadBook key={book.bookId} book={book} ></ReadBook>)
+               readBooks.map(book => <ReadBook key={book.bookId} book={book} ></ReadBook>)
                 
             }
 

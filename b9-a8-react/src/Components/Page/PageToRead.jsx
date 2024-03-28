@@ -19,28 +19,29 @@ const TriangleBar = (props) => {
     return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
 };
 
-let data = []
+
 
 export default function PageToRead() {
     
-    const itemBook  = useReadListBooks();
-      itemBook.map(item => {
-        const { bookName, totalPages }=item
-        const singleData = 
-            {
-                name: bookName,
-                uv: totalPages
+    let data = []
+    const itemBook = useReadListBooks();
+    console.log(itemBook);
+    itemBook.map(item => {
+        const { bookName, totalPages } = item
+        const singleData =
+        {
+            name: bookName,
+            uv: totalPages
 
-            }
-         const exist = data.find(book => book.name==bookName);
-         
-         if (!exist) {
-             data.push(singleData)
-         }
-         
-     },
+        }
+        const exist = data.find(book => book.name == bookName);
+
+        if (!exist) {
+            data.push(singleData)
+        }
+
+    },
     )
- 
     return (
         <BarChart
             width={700}

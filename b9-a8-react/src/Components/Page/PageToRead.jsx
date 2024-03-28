@@ -19,32 +19,33 @@ const TriangleBar = (props) => {
     return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
 };
 
-
+let data = []
 
 export default function PageToRead() {
-    const datas =[]
+    
     const itemBook  = useReadListBooks();
-    const book = itemBook.map(item => {
+      itemBook.map(item => {
         const { bookName, totalPages }=item
-        const data = 
+        const singleData = 
             {
-                name: {bookName},
-                uv: {totalPages}
+                name: bookName,
+                uv: totalPages
 
             }
-        console.log(data)
-        datas.push(data)
-        return[datas]
-       
-    })
-    
-    
-   
+         const exist = data.find(book => book.name==bookName);
+         
+         if (!exist) {
+             data.push(singleData)
+         }
+         
+     },
+    )
+ 
     return (
         <BarChart
             width={700}
             height={500}
-            data={PageToRead}
+            data={data}
             margin={{
                 top: 20,
                 right: 30,
@@ -57,7 +58,7 @@ export default function PageToRead() {
             <XAxis dataKey="name" />
             <YAxis />
             <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-                {PageToRead.map((entry, index) => (
+                {data.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={colors[index % 20]} />
                 ))}
             </Bar>

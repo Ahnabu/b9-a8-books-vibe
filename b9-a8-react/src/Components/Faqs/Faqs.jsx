@@ -13,7 +13,7 @@ export default function DefaultAccordion() {
 
     return (
         <>
-            <Accordion open={open === 1}>
+            <Accordion open={open === 1} className="mt-12">
                 <AccordionHeader onClick={() => handleOpen(1)}>How much should I read each day?</AccordionHeader>
                 <AccordionBody>
                     There's no one-size-fits-all answer! Aim for a consistent amount that fits your schedule and attention span. Even 20-30 minutes a day can significantly improve your reading comprehension and vocabulary.

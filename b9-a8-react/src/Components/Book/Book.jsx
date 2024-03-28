@@ -21,11 +21,11 @@ const Book = ({ book }) => {
             
             
             <Card className="mt-6 w-96 p-4">
-                <CardHeader color="blue-gray" className="relative h-[380px] object-center object-cover">
-                    <img
+                    <CardHeader color="blue-gray" style={{ backgroundImage: `url(${image})` }} className={`relative h-[380px] object-center w-[300px]  bg-cover `}>
+                    {/* <img
                         src={image}
                         alt="card-image"
-                    />
+                    /> */}
                 </CardHeader>
                 <div className="flex justify-around">
                     <h1 className="text-[#23BE0A] border border-[#23BE0A] rounded-xl p-1 ml-3 text-center mt-5">{ tags[0]}</h1>

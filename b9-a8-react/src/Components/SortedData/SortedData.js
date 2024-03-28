@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useWishListBooks } from '../ListHooks/ListHooks';
+import { useReadListBooks, useWishListBooks } from '../ListHooks/ListHooks';
 
-function useWishSort(sortBy) {
+function useReadSort(sortBy) {
     
     const [sortedData, setSortedData] = useState([]);
     
-    const data =useWishListBooks()
+    const data = useReadListBooks()
+    
     useEffect(() => {
         const sortData = [...data]; // Avoid mutating the original data
 
@@ -27,6 +28,33 @@ function useWishSort(sortBy) {
     }, [data, sortBy]); // Re-run useEffect when data or sortBy changes
     return sortedData;
 }
+function useWishSort(sortBy) {
+    
+    const [sortedWishData, setSortedWishData] = useState([]);
+    
+    const data = useWishListBooks()
+   
+    useEffect(() => {
+        const sortData = [...data]; // Avoid mutating the original data
+
+        sortData.sort((a, b) => {
+            if (sortBy === 'yearOfPublishing') {
+                return b.yearOfPublishing - a.yearOfPublishing;
+            } else if (sortBy === 'totalPages') {
+                return b.totalPages - a.totalPages; // Sort by pages in descending order
+            } else if (sortBy === 'rating') {
+                return b.rating - a.rating;
+
+            }
+            else {
+                return b.bookId - a.bookId;
+
+            }
+        });
+        setSortedWishData(sortData);
+    }, [data, sortBy]); // Re-run useEffect when data or sortBy changes
+    return sortedWishData;
+}
 
 
-export { useWishSort } 
+export { useWishSort, useReadSort } 

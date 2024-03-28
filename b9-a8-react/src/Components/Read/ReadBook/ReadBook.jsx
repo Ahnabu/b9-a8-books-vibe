@@ -15,7 +15,8 @@ import { IoBookOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 const ReadBook = ({book}) => {
     
-    const { bookName, author, image, rating, tags, totalPages, yearOfPublishing, publisher, category,bookId } = book
+    const { bookName, author, image, rating, tags, totalPages, yearOfPublishing, publisher, category, bookId } = book;
+   
     return (
         <div className="" >
             <Card className=" w-380px lg:w-[80vw]  mx-auto h-full flex-col lg:flex-row ">

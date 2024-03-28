@@ -53,6 +53,26 @@ export function StickyNavbar() {
                     return isActive ? { color: '#23BE0A', borderRadius: "15px", border:"1px solid #23BE0A", padding:'10px 15px'} : {};
                 }}> Pages to Read</NavLink>
             </Typography>
+            <Typography
+                as="li"
+                variant="small"
+                color="blue-gray"
+                className="p-1 font-normal"
+            >
+                <NavLink to={'/about-us'} className="flex items-center  text-primary" style={({ isActive }) => {
+                    return isActive ? { color: '#23BE0A', borderRadius: "15px", border:"1px solid #23BE0A", padding:'10px 15px'} : {};
+                }}> About Us</NavLink>
+            </Typography>
+            <Typography
+                as="li"
+                variant="small"
+                color="blue-gray"
+                className="p-1 font-normal"
+            >
+                <NavLink to={'/faqs'} className="flex items-center  text-primary" style={({ isActive }) => {
+                    return isActive ? { color: '#23BE0A', borderRadius: "15px", border:"1px solid #23BE0A", padding:'10px 15px'} : {};
+                }}> FAQS</NavLink>
+            </Typography>
             
         </ul>
     );
@@ -66,7 +86,7 @@ export function StickyNavbar() {
                         href="#"
                         className="mr-4 cursor-pointer py-1.5 font-bold text-black"
                     >
-                        Book Vibe
+                        Book Haven
                     </Typography>
                     <div className="mr-4 hidden lg:block text-[#131313CC] ">{navList}</div>
                     <div className="flex items-center gap-4">

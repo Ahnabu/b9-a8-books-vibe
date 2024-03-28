@@ -13,6 +13,8 @@ import PageToRead from './Components/Page/PageToRead';
 import SelectedBook from './Components/SelectedBook/SelectedBook';
 import Read from './Components/Read/Read';
 import Wishlist from './Components/Wishlist/Wishlist';
+import AboutUs from './Components/AboutUs/AboutUs';
+import Faqs from './Components/Faqs/Faqs';
 
 
 const router = createBrowserRouter([
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/faqs",
+        element: <Faqs></Faqs>,
       },
       {
         path: "/book/:id",
